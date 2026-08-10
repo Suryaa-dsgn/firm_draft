@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
    the real character always occupies the layout slot. */
 const GLYPHS = "!#$%?/+=:|~&-0123456789@;.";
 
-function pick() {
-  return GLYPHS[Math.floor(Math.random() * GLYPHS.length)];
+function pick(): string {
+  return GLYPHS[Math.floor(Math.random() * GLYPHS.length)] ?? "?";
 }
 
 interface ScrambleTextProps {
@@ -91,7 +91,7 @@ export function ScrambleText({
       const nextLocked: boolean[] = [];
 
       for (let i = 0; i < n; i++) {
-        const c = chars[i];
+        const c = chars[i] ?? "";
         if (c === " ") {
           nextGlyphs.push(" ");
           nextLocked.push(true);

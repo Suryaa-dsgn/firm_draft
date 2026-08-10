@@ -334,7 +334,8 @@ export function AgentShowcase({ agents }: { agents: AgentSystem[] }) {
     return () => clearInterval(id);
   }, [paused, agents.length]);
 
-  const agent = agents[activeIdx];
+  const agent = agents[activeIdx] ?? agents[0];
+  if (!agent) return null;
 
   return (
     <div
@@ -423,7 +424,7 @@ export function AgentShowcase({ agents }: { agents: AgentSystem[] }) {
           <button
             key={i}
             onClick={() => setActiveIdx(i)}
-            aria-label={`View ${agents[i].name}`}
+            aria-label={`View ${_.name}`}
             className={cn(
               "h-px rounded-full transition-all duration-300",
               i === activeIdx
