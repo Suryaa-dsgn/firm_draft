@@ -1,0 +1,147 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Brand tokens ─── */
+:root {
+  /* Surface */
+  --canvas:          #FAFAF8;
+  --surface:         #FFFFFF;
+  --surface-sunk:    #F3F3EF;
+
+  /* Text */
+  --ink:             #0E0E0F;
+  --ink-muted:       #6B6B70;
+  --ink-faint:       #9A9AA0;
+
+  /* Borders */
+  --hairline:        #E6E6E2;
+  --hairline-strong: #D6D6D0;
+
+  /* Accent */
+  --accent:          #2450E6;
+  --accent-hover:    #1B41C7;
+  --accent-tint:     #EAEEFF;
+
+  /* Navy */
+  --navy:            #0D0D0F;
+  --navy-2:          #161618;
+  --on-navy:         #E8E8EA;
+  --on-navy-muted:   #888891;
+
+  /* Data */
+  --data-base:       #C9CCD6;
+  --data-signal:     #2450E6;
+
+  /* Radius */
+  --radius-card:     10px;
+  --radius-input:    6px;
+
+  /* Type scale */
+  --display-xl: clamp(2.25rem, 4.5vw, 3.75rem);
+  --display-l:  clamp(2rem, 4vw, 3.25rem);
+  --display-m:  clamp(1.5rem, 2.5vw, 2rem);
+  --title:      1.375rem;
+  --body-lg:    1.1875rem;
+  --body:       1.0625rem;
+  --small:      0.9375rem;
+  --mono-label: 0.75rem;
+
+  /* shadcn compat — map our tokens onto shadcn vars so their components look right */
+  --background:          var(--canvas);
+  --foreground:          var(--ink);
+  --border:              var(--hairline);
+  --input:               var(--hairline);
+  --ring:                var(--accent);
+  --radius:              var(--radius-card);
+  --popover:             var(--surface);
+  --popover-foreground:  var(--ink);
+  --muted:               var(--surface-sunk);
+  --muted-foreground:    var(--ink-muted);
+}
+
+/* ─── Base styles ─── */
+@layer base {
+  * {
+    border-color: var(--hairline);
+    outline-color: color-mix(in srgb, var(--accent) 50%, transparent);
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    background-color: var(--canvas);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--canvas);
+    color: var(--ink);
+    font-size: var(--body);
+    line-height: 1.6;
+  }
+
+  .font-mono {
+    font-family: var(--font-geist-mono), monospace;
+  }
+}
+
+/* ─── Utilities ─── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .content-grid {
+    display: grid;
+    grid-template-columns:
+      [full-start] minmax(var(--gutter), 1fr)
+      [content-start] min(var(--content-max, 1240px), calc(100% - var(--gutter) * 2)) [content-end]
+      minmax(var(--gutter), 1fr) [full-end];
+    --gutter: clamp(20px, 5vw, 64px);
+  }
+
+  .content-grid > * {
+    grid-column: content;
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.055) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+}
+
+/* ─── Footer ticker ─── */
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ─── Reduced-motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-target {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* ─── Reduced-transparency ─── */
+@media (prefers-reduced-transparency: reduce) {
+  .nav-blur {
+    background: var(--canvas) !important;
+    backdrop-filter: none !important;
+  }
+}
