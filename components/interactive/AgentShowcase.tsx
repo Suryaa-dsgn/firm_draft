@@ -8,11 +8,11 @@ import { cn } from "@/lib/utils";
 
 // ─── Governance: terminal feed ──────────────────────────────────────
 const GOV_ROWS = [
-  { company: "Vertex Capital",  stat: "SPEND",  value: "$2.4M",  ok: true  },
-  { company: "Meridian Ops",    stat: "SLA",    value: "99.9%",  ok: true  },
-  { company: "Atlas Holdings",  stat: "RISK",   value: "LOW",    ok: true  },
-  { company: "Comet Systems",   stat: "COMPL.", value: "98.2%",  ok: true  },
-  { company: "Nova Ventures",   stat: "BUDGET", value: "ALERT",  ok: false },
+  { company: "Northwind Infra",  stat: "SLA",    value: "99.9%",  ok: true  },
+  { company: "Meridian Advisory",stat: "SPEND",  value: "$1.8M",  ok: true  },
+  { company: "Vantage Controls", stat: "COMPL.", value: "97.4%",  ok: true  },
+  { company: "Cardinal Eng.",    stat: "RISK",   value: "MEDIUM", ok: true  },
+  { company: "Atlas Industrial", stat: "BUDGET", value: "ALERT",  ok: false },
 ];
 
 function GovernanceViz({ reduced }: { reduced: boolean }) {
@@ -78,9 +78,9 @@ function GovernanceViz({ reduced }: { reduced: boolean }) {
 
 // ─── Intelligence: aggregation flow ────────────────────────────────
 const INTEL_SOURCES = [
-  { name: "Alpha Holdco",  metrics: "12 KPIs · 3 flags" },
-  { name: "Beta Platform", metrics: "9 KPIs  · 0 flags"  },
-  { name: "Gamma Fund",    metrics: "15 KPIs · 1 flag"   },
+  { name: "Cardinal Engineering",      metrics: "14 KPIs · 2 flags" },
+  { name: "Northwind Infrastructure",  metrics: "11 KPIs · 0 flags" },
+  { name: "Atlas Industrial Services", metrics: "12 KPIs · 3 flags" },
 ];
 
 function IntelligenceViz({ reduced }: { reduced: boolean }) {
@@ -131,7 +131,7 @@ function IntelligenceViz({ reduced }: { reduced: boolean }) {
         </div>
         <div className="flex items-center justify-between">
           <span className="font-mono text-[11px] text-on-navy">
-            36 KPIs · 4 flags · Cycle: 2h
+            46 KPIs · 7 flags · Cycle: 2h
           </span>
           <span className="text-accent text-xs">↗</span>
         </div>

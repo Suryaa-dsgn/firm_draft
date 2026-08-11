@@ -8,7 +8,7 @@ const STATS = [
   { value: "4.1×", caption: "Average improvement in technology ROI attribution" },
   { value: "73%", caption: "Reduction in portfolio governance reporting time" },
   { value: "19%", caption: "Technology cost reduction in the first 90 days" },
-  { value: "91%", caption: "Engagements that reach exit with technology debt resolved" },
+  { value: "88%", caption: "Engagements that reach exit with technology debt resolved" },
 ];
 
 export function Proof() {
@@ -34,8 +34,7 @@ export function Proof() {
         <div className="col-span-12 lg:col-span-5 lg:col-start-7 lg:pt-2">
           <Reveal delay={0.12}>
             <p className="text-body text-ink-muted">
-              Figures will be published as engagements complete and data matures.
-              All metrics are independently verified.
+              Illustrative figures. Real engagement metrics will replace these as data matures.
             </p>
             <p className="mt-2 font-mono text-mono-label uppercase tracking-widest text-ink-muted">
               [PLACEHOLDERS - REAL DATA PENDING]

@@ -8,8 +8,8 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { NAV_CTA_LABEL } from "@/lib/config";
 
-const HeroVisual = dynamic(
-  () => import("@/components/interactive/HeroVisual"),
+const PortfolioMonitor = dynamic(
+  () => import("@/components/interactive/PortfolioMonitor"),
   { ssr: false }
 );
 
@@ -67,13 +67,13 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* Hero visual */}
+          {/* Portfolio Monitor widget */}
           <Reveal
             delay={0.1}
-            className="col-span-12 lg:col-span-6 lg:col-start-7 flex items-center"
+            className="col-span-12 lg:col-span-6 lg:col-start-7 flex items-start"
           >
-            <div className="w-full max-w-sm lg:max-w-none" aria-hidden="true">
-              <HeroVisual />
+            <div className="w-full max-w-sm lg:max-w-none">
+              <PortfolioMonitor />
             </div>
           </Reveal>
         </div>

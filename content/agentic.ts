@@ -37,7 +37,7 @@ export const agentSystems: AgentSystem[] = [
     name: "ROI Attribution Engine",
     tag: "ATTRIBUTION",
     watches: "Technology investment, operational metrics, and financial outcomes at the company and fund level.",
-    does: "Maps spend to outcomes, builds attribution models, and generates defensible reporting for board and LP review.",
-    returns: "A clear line from technology dollar to financial return, replacing quarterly manual exercises.",
+    does: "Maps spend to outcomes, builds attribution models, and generates defensible reporting for board and investor review.",
+    returns: "A clear line from technology dollar to financial return, replacing quarterly manual reporting.",
   },
 ];

@@ -9,7 +9,7 @@ const TICKER_ITEMS = [
   "[#CIO ADVISORY]",
   "[#PORTFOLIO INTELLIGENCE]",
   "[#TECHNOLOGY ROI]",
-  "[#PE OPERATIONS]",
+  "[#PORTFOLIO OPERATIONS]",
   "[#AGENTIC SYSTEMS]",
   "[#VALUE CREATION]",
   "[#EXIT READINESS]",
@@ -84,8 +84,7 @@ export function Footer() {
                 Stay ahead of the portfolio.
               </h3>
               <p className="mt-3 max-w-xs text-small text-ink-muted leading-relaxed">
-                Perspectives on technology governance, agentic systems, and PE
-                portfolio operations — delivered directly.
+                Perspectives on technology governance, agentic systems, and portfolio operations, delivered directly.
               </p>
               <form
                 className="mt-8 flex overflow-hidden rounded-input border border-hairline"
@@ -205,7 +204,7 @@ export function Footer() {
       <div className="border-t border-hairline">
         <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)] py-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-mono-label text-ink-faint">
-            {FIRM} &copy; {LEGAL_YEAR} — CIO Advisory & Agentic Transformation
+            {FIRM} &copy; {LEGAL_YEAR} · CIO Advisory & Agentic Transformation
           </p>
           <div className="flex items-center gap-5">
             {SECONDARY_LINKS.map(({ label, href }, i) => (
