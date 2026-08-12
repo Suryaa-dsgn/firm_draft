@@ -42,7 +42,7 @@ export default function ProjectControls() {
   const withAgent = mode === "agent";
 
   return (
-    <div className="flex flex-col h-[380px] rounded-card border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.02)] overflow-hidden">
+    <div className="flex flex-col h-[380px] rounded-card border border-hairline bg-navy overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between border-b border-[rgba(255,255,255,0.08)] px-5 py-4">
         <div className="min-w-0">

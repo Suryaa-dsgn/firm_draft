@@ -163,6 +163,66 @@ export default function ApproachPage() {
         </div>
       </section>
 
+      {/* Who you will work with */}
+      <section className="border-b border-hairline py-24 md:py-32">
+        <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
+          <Reveal>
+            <MonoLabel variant="tag">WHO YOU WILL WORK WITH</MonoLabel>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <h2 className="mt-6 max-w-xl text-display-m font-semibold text-ink text-balance">
+              Senior from day one.
+            </h2>
+          </Reveal>
+
+          <div className="mt-14 grid grid-cols-12 gap-6 lg:gap-12">
+            {/* Photo slot */}
+            <div className="col-span-12 lg:col-span-4">
+              <Reveal delay={0.1}>
+                {/* Monogram placeholder — swap for a real photograph when available */}
+                <div
+                  className="flex size-28 items-center justify-center rounded-card border border-hairline bg-surface-sunk"
+                  data-placeholder="principal-photo"
+                  aria-label="Principal photo placeholder"
+                >
+                  <span className="font-mono text-[2rem] font-semibold leading-none text-ink-faint">
+                    [P]
+                  </span>
+                </div>
+                <h3 className="mt-6 text-title font-semibold text-ink">
+                  [PRINCIPAL NAME]
+                </h3>
+                <p className="mt-1 font-mono text-mono-label uppercase tracking-widest text-ink-faint">
+                  Founding Principal
+                </p>
+                <p className="font-mono text-mono-label uppercase tracking-widest text-ink-faint">
+                  CIO Advisory Practice
+                </p>
+              </Reveal>
+            </div>
+
+            {/* Bio */}
+            <div className="col-span-12 lg:col-span-7 lg:col-start-6 lg:pt-1">
+              <Reveal delay={0.14}>
+                <p className="text-body text-ink-muted">
+                  Every engagement is led by a senior practitioner, not handed to a
+                  junior team after the kickoff call. The principal who scopes the
+                  work runs the work, stays accountable through exit, and gives you
+                  a direct line when something needs to move fast.
+                </p>
+                <p className="mt-4 text-body text-ink-muted">
+                  [Placeholder. A real bio and photograph replace this before the
+                  site goes live.]
+                </p>
+                <p className="mt-4 font-mono text-mono-label uppercase tracking-widest text-ink-faint">
+                  [PLACEHOLDER - REAL BIO PENDING]
+                </p>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-navy py-24 md:py-32">
         <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
