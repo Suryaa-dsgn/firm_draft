@@ -53,18 +53,22 @@ export default function ApproachPage() {
         subtext="Every engagement follows the same structure: diagnose first, govern next, deploy with precision, then measure continuously. The sequence is not arbitrary. Each phase depends on the one before it."
       />
 
-      {/* Phase sections */}
-      {processSteps.map((step, i) => (
-        <section
-          key={step.index}
-          className={cn(
-            "border-b border-hairline py-24",
-            i % 2 === 1 ? "bg-surface-sunk" : "bg-canvas"
-          )}
-        >
-          <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
+      {/* Phase-stack wrapper — bg-surface-sunk tray that frames the card deck */}
+      <div className="bg-surface-sunk pt-6">
+        {processSteps.map((step, i) => (
+          <section
+            key={step.index}
+            className={cn(
+              "mx-auto max-w-content",
+              "bg-canvas rounded-card border border-hairline shadow-card-hover",
+              "px-[clamp(20px,5vw,64px)] py-12",
+              i < processSteps.length - 1 && "mb-3",
+              "md:sticky",
+            )}
+            style={{ top: `${64 + i * 80}px`, zIndex: i + 1 }}
+          >
             <div className="grid grid-cols-12 gap-6">
-              {/* Left — number + phase name */}
+              {/* Left col */}
               <div className="col-span-12 lg:col-span-4">
                 <Reveal>
                   <div
@@ -74,30 +78,21 @@ export default function ApproachPage() {
                   >
                     {String(step.index).padStart(2, "0")}
                   </div>
-                  <h2 className="mt-2 text-display-m font-semibold text-ink">
-                    {step.phase}
-                  </h2>
-                  <MonoLabel className="mt-3 text-ink-faint">
-                    {step.duration.toUpperCase()}
-                  </MonoLabel>
+                  <h2 className="mt-2 text-display-m font-semibold text-ink">{step.phase}</h2>
+                  <MonoLabel className="mt-3 text-ink-faint">{step.duration.toUpperCase()}</MonoLabel>
                 </Reveal>
               </div>
-
-              {/* Right — description + activities */}
+              {/* Right col */}
               <div className="col-span-12 lg:col-span-7 lg:col-start-6 lg:pt-6">
                 <Reveal delay={0.1}>
                   <p className="text-body-lg text-ink-muted">{step.description}</p>
                 </Reveal>
-
                 <Reveal delay={0.18}>
                   <div className="mt-8">
                     <MonoLabel className="mb-4 text-ink-faint">ACTIVITIES</MonoLabel>
                     <ul className="space-y-3">
                       {step.activities.map((activity, j) => (
-                        <li
-                          key={activity}
-                          className="flex items-start gap-4 text-body text-ink"
-                        >
+                        <li key={activity} className="flex items-start gap-4 text-body text-ink">
                           <span className="mt-0.5 font-mono text-mono-label text-ink-faint shrink-0">
                             {String(j + 1).padStart(2, "0")}
                           </span>
@@ -109,9 +104,9 @@ export default function ApproachPage() {
                 </Reveal>
               </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        ))}
+      </div>
 
       {/* First 90 Days section */}
       <section className="border-b border-hairline bg-surface-sunk py-24 md:py-32">
