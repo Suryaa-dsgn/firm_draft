@@ -47,7 +47,7 @@ export function AgenticLayer() {
           <Reveal delay={0.06}>
             <h2 className="text-display-m font-semibold text-on-navy">
               <ScrambleText duration={870}>
-                {"Governance that runs without being told to."}
+                {"Agentic systems built for portfolio operations."}
               </ScrambleText>
             </h2>
           </Reveal>
@@ -55,9 +55,19 @@ export function AgenticLayer() {
         <div className="col-span-12 lg:col-span-5 lg:col-start-8 lg:pt-2">
           <Reveal delay={0.12}>
             <p className="text-body text-on-navy-muted">
-              Agentic systems that monitor, analyze, and report on your portfolio
-              technology, so your team can spend time on decisions, not data collection.
+              Agents that execute the work, not just analyze it. Deployed alongside
+              your existing systems, no rip-and-replace required.
             </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["No integration required", "Usage-based pricing", "Reusable across the portfolio"].map((chip) => (
+                <span
+                  key={chip}
+                  className="rounded-input border border-[rgba(255,255,255,0.12)] px-3 py-1.5 font-mono text-mono-label uppercase tracking-widest text-on-navy-muted"
+                >
+                  {chip}
+                </span>
+              ))}
+            </div>
           </Reveal>
         </div>
       </div>

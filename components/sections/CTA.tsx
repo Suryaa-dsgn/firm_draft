@@ -22,18 +22,18 @@ export function CTA() {
         <div className="col-span-12 lg:col-span-7">
           <h2 className="text-display-l font-semibold text-balance">
             <ScrambleText className="text-on-navy" delay={0.08} duration={780}>
-              {"If technology is the problem, "}
+              {"Find the technology opportunities "}
             </ScrambleText>
             <ScrambleText className="text-accent" delay={0.42} duration={640}>
-              {"we are the answer."}
+              {"inside your portfolio."}
             </ScrambleText>
           </h2>
 
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-md text-body-lg text-on-navy-muted">
-              A 30-minute conversation is enough to know whether this is the right
-              fit. No pitch, no deck. Just a direct discussion about what you are
-              trying to solve.
+              Start with one portfolio company. We assess the landscape, surface
+              the highest-value opportunities, and define a practical path to
+              execution.
             </p>
           </Reveal>
 

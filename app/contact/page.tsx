@@ -6,14 +6,14 @@ import { CONTACT_EMAIL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Book a 30-minute conversation with our CIO Advisory team.",
+  description: "Tell us what you are dealing with. We will tell you honestly whether we are the right fit.",
 };
 
 const WHAT_TO_EXPECT = [
   {
     step: "01",
     title: "No pitch",
-    body: "We will not walk you through a deck. The first call is a direct conversation about the problem you are trying to solve.",
+    body: "The first call is a direct conversation about the problem you are trying to solve. No deck, no slides.",
   },
   {
     step: "02",
@@ -38,13 +38,18 @@ export default function ContactPage() {
           </Reveal>
           <Reveal delay={0.08}>
             <h1 className="mt-6 max-w-2xl text-display-l font-semibold text-ink text-balance">
-              Book a conversation.
+              Tell us what you are dealing with.
             </h1>
+          </Reveal>
+          <Reveal delay={0.14}>
+            <p className="mt-4 max-w-xl text-body-lg text-ink-muted">
+              We will tell you honestly whether we are the right fit.
+            </p>
           </Reveal>
         </div>
       </section>
 
-      {/* Main content — two columns */}
+      {/* Main content */}
       <section className="py-14 md:py-32">
         <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
           <div className="grid grid-cols-12 gap-y-10 lg:gap-16">

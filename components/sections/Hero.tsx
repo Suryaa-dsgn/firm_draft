@@ -38,15 +38,14 @@ export function Hero() {
 
             {/* Lede */}
             <Reveal delay={0.18}>
-              <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
-                We bring CIO-level leadership and agentic systems to portfolios that need
-                both. The result is technology that runs with the precision your investors
-                expect.
+              <p className="mt-4 max-w-xl text-body-lg text-ink-muted">
+                We turn technology from an unmanaged cost into a measurable value-creation lever,
+                from pre-close diligence through the hold period to exit.
               </p>
             </Reveal>
 
             {/* CTAs */}
-            <Reveal delay={0.26}>
+            <Reveal delay={0.32}>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
                   href="/contact"
