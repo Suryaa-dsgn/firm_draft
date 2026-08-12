@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { spring } from "@/lib/motion";
 import { SectionShell } from "@/components/primitives/SectionShell";
 import { Reveal } from "@/components/primitives/Reveal";
@@ -40,6 +40,8 @@ const LEVELS: Record<Level, { label: string; description: string; chips: string[
 
 export function FirmPortfolioToggle() {
   const [level, setLevel] = useState<Level>("firm");
+  const reduced = useReducedMotion();
+  const transition = reduced ? { duration: 0 } : spring.snappy;
   const current = LEVELS[level];
 
   return (
@@ -77,7 +79,7 @@ export function FirmPortfolioToggle() {
                 <motion.div
                   layoutId="level-pill"
                   className="absolute inset-0 bg-canvas border border-hairline rounded-[calc(var(--radius-card)-1px)]"
-                  transition={spring.snappy}
+                  transition={transition}
                 />
               )}
               <span className="relative z-10">{LEVELS[l].label}</span>
@@ -89,10 +91,10 @@ export function FirmPortfolioToggle() {
         <AnimatePresence mode="wait">
           <motion.div
             key={level}
-            initial={{ opacity: 0, y: 6 }}
+            initial={{ opacity: 0, y: reduced ? 0 : 6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -4 }}
-            transition={spring.snappy}
+            exit={{ opacity: 0, y: reduced ? 0 : -4 }}
+            transition={transition}
           >
             <p className="mb-6 text-small text-ink-faint font-mono uppercase tracking-widest">
               {current.description}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { Reveal } from "@/components/primitives/Reveal";
+import { PageHeader } from "@/components/primitives/PageHeader";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { solutions } from "@/content/solutions";
@@ -16,26 +17,11 @@ export const metadata: Metadata = {
 export default function SolutionsPage() {
   return (
     <div className="pt-16">
-      {/* Page header */}
-      <section className="border-b border-hairline py-24 md:py-32">
-        <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
-          <Reveal>
-            <MonoLabel variant="tag">SOLUTIONS</MonoLabel>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-3xl text-display-l font-semibold text-ink text-balance">
-              Four capabilities. One integrated practice.
-            </h1>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
-              Each offering is designed to work on its own or as part of a full
-              engagement. The pattern is always the same: install the right leadership,
-              build the measurement layer, and connect technology to returns.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHeader
+        tag="SOLUTIONS"
+        title="Four capabilities. One integrated practice."
+        subtext="Each offering is designed to work on its own or as part of a full engagement. The pattern is always the same: install the right leadership, build the measurement layer, and connect technology to returns."
+      />
 
       {/* Pillar sections */}
       {solutions.map((pillar, i) => {

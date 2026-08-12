@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { Reveal } from "@/components/primitives/Reveal";
+import { PageHeader } from "@/components/primitives/PageHeader";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { NAV_CTA_LABEL } from "@/lib/config";
@@ -77,25 +78,11 @@ const VERTICALS = [
 export default function IndustriesPage() {
   return (
     <div className="pt-16">
-      {/* Page header */}
-      <section className="border-b border-hairline py-24 md:py-32">
-        <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
-          <Reveal>
-            <MonoLabel variant="tag">INDUSTRIES</MonoLabel>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-3xl text-display-l font-semibold text-ink text-balance">
-              Where we create the most leverage.
-            </h1>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
-              Strongest results in operationally intensive businesses where technology
-              and process complexity create clear value-creation opportunities.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHeader
+        tag="INDUSTRIES"
+        title="Where we create the most leverage."
+        subtext="Strongest results in operationally intensive businesses where technology and process complexity create clear value-creation opportunities."
+      />
 
       {/* Vertical sections */}
       {VERTICALS.map((vertical, i) => (

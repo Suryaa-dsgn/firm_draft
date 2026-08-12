@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { Reveal } from "@/components/primitives/Reveal";
+import { PageHeader } from "@/components/primitives/PageHeader";
 
 export const metadata: Metadata = {
   title: "Insights",
@@ -31,24 +32,12 @@ const PLACEHOLDER_CARDS = [
 export default function InsightsPage() {
   return (
     <div className="pt-16">
-      <section className="border-b border-hairline py-24 md:py-32">
-        <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
-          <Reveal>
-            <MonoLabel variant="tag">INSIGHTS</MonoLabel>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl text-display-l font-semibold text-ink text-balance">
-              Perspectives on technology leadership.
-            </h1>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
-              Writing on CIO strategy, agentic systems, and how PE portfolio operators
-              can turn technology into a measurable advantage.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHeader
+        tag="INSIGHTS"
+        title="Perspectives on technology leadership."
+        subtext="Writing on CIO strategy, agentic systems, and how PE portfolio operators can turn technology into a measurable advantage."
+        titleMaxWidth="max-w-2xl"
+      />
 
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">

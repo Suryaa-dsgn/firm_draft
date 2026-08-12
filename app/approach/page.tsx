@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { Reveal } from "@/components/primitives/Reveal";
+import { PageHeader } from "@/components/primitives/PageHeader";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { processSteps } from "@/content/approach";
@@ -46,26 +47,11 @@ const NINETY_DAY_PHASES = [
 export default function ApproachPage() {
   return (
     <div className="pt-16">
-      {/* Page header */}
-      <section className="border-b border-hairline py-24 md:py-32">
-        <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
-          <Reveal>
-            <MonoLabel variant="tag">APPROACH</MonoLabel>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-3xl text-display-l font-semibold text-ink text-balance">
-              Four phases. One operating model.
-            </h1>
-          </Reveal>
-          <Reveal delay={0.16}>
-            <p className="mt-6 max-w-xl text-body-lg text-ink-muted">
-              Every engagement follows the same structure: diagnose first, govern
-              next, deploy with precision, then measure continuously. The sequence
-              is not arbitrary. Each phase depends on the one before it.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHeader
+        tag="APPROACH"
+        title="Four phases. One operating model."
+        subtext="Every engagement follows the same structure: diagnose first, govern next, deploy with precision, then measure continuously. The sequence is not arbitrary. Each phase depends on the one before it."
+      />
 
       {/* Phase sections */}
       {processSteps.map((step, i) => (

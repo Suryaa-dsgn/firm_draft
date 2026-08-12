@@ -88,7 +88,7 @@ const config: Config = {
       },
 
       spacing: {
-        "section": "clamp(80px, 12vh, 160px)",
+        "section": "clamp(80px, 7rem, 130px)",
       },
     },
   },

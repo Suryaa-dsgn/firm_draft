@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { spring } from "@/lib/motion";
 import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { SectionShell } from "@/components/primitives/SectionShell";
@@ -61,8 +61,10 @@ const STAGES = [
 export function LifecycleDiagram() {
   const [activeStage, setActiveStage] = useState(0);
   const [mobileOpen, setMobileOpen] = useState<number | null>(null);
+  const reduced = useReducedMotion();
 
   const active = STAGES[activeStage] ?? STAGES[0];
+  const transition = reduced ? { duration: 0 } : spring.snappy;
 
   return (
     <SectionShell id="lifecycle" className="border-t border-hairline">
@@ -142,10 +144,10 @@ export function LifecycleDiagram() {
           <motion.div
             key={activeStage}
             className="mt-10 rounded-card border border-hairline bg-surface-sunk px-8 py-7"
-            initial={{ opacity: 0, y: 6 }}
+            initial={{ opacity: 0, y: reduced ? 0 : 6 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -4 }}
-            transition={spring.snappy}
+            exit={{ opacity: 0, y: reduced ? 0 : -4 }}
+            transition={transition}
           >
             <MonoLabel className="mb-5 text-accent">{active.tag}</MonoLabel>
             <div className="grid gap-3 sm:grid-cols-2">
@@ -189,7 +191,7 @@ export function LifecycleDiagram() {
                       initial={{ height: 0 }}
                       animate={{ height: "auto" }}
                       exit={{ height: 0 }}
-                      transition={spring.snappy}
+                      transition={transition}
                     >
                       <div className="border-t border-hairline px-5 pb-5 pt-4 space-y-2.5">
                         <MonoLabel className="mb-3 text-accent">{stage.tag}</MonoLabel>

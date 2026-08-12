@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { Reveal } from "@/components/primitives/Reveal";
+import { PageHeader } from "@/components/primitives/PageHeader";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { CONTACT_EMAIL } from "@/lib/config";
 
@@ -30,24 +31,12 @@ const WHAT_TO_EXPECT = [
 export default function ContactPage() {
   return (
     <div className="pt-16">
-      {/* Page header */}
-      <section className="border-b border-hairline py-24 md:py-32">
-        <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
-          <Reveal>
-            <MonoLabel variant="tag">CONTACT</MonoLabel>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <h1 className="mt-6 max-w-2xl text-display-l font-semibold text-ink text-balance">
-              Tell us what you are dealing with.
-            </h1>
-          </Reveal>
-          <Reveal delay={0.14}>
-            <p className="mt-4 max-w-xl text-body-lg text-ink-muted">
-              We will tell you honestly whether we are the right fit.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      <PageHeader
+        tag="CONTACT"
+        title="Tell us what you are dealing with."
+        subtext="We will tell you honestly whether we are the right fit."
+        titleMaxWidth="max-w-2xl"
+      />
 
       {/* Main content */}
       <section className="py-14 md:py-32">
