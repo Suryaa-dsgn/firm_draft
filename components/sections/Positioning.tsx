@@ -1,4 +1,3 @@
-import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { SectionShell } from "@/components/primitives/SectionShell";
 import { Reveal } from "@/components/primitives/Reveal";
 import { ScrambleText } from "@/components/primitives/ScrambleText";

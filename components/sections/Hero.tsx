@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { MonoLabel } from "@/components/primitives/MonoLabel";
-import { LogoSlot } from "@/components/primitives/LogoSlot";
 import { Reveal } from "@/components/primitives/Reveal";
 import { ScrambleText } from "@/components/primitives/ScrambleText";
 import { buttonVariants } from "@/components/ui/button";

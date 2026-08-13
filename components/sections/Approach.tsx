@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { spring } from "@/lib/motion";
-import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { SectionShell } from "@/components/primitives/SectionShell";
 import { Reveal } from "@/components/primitives/Reveal";
 import { ScrambleText } from "@/components/primitives/ScrambleText";
