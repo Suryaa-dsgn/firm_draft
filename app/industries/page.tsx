@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import Link from "next/link";
 import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { Reveal } from "@/components/primitives/Reveal";
 import { PageHeader } from "@/components/primitives/PageHeader";
-import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { NAV_CTA_LABEL } from "@/lib/config";
+import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
   title: "Industries",
@@ -160,32 +158,10 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-navy py-24 md:py-32">
-        <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
-          <Reveal>
-            <h2 className="max-w-2xl text-display-m font-semibold text-on-navy text-balance">
-              Not sure if your portfolio fits? Start with a conversation.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-6 max-w-lg text-body-lg text-on-navy-muted">
-              We will tell you honestly whether the opportunity is there and what
-              it would take to capture it.
-            </p>
-          </Reveal>
-          <Reveal delay={0.18}>
-            <div className="mt-10">
-              <Link
-                href="/contact"
-                className={cn(buttonVariants({ size: "lg" }), "no-underline")}
-              >
-                {NAV_CTA_LABEL}
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <CTASection
+        heading="Not sure if your portfolio fits? Start with a conversation."
+        description="We will tell you honestly whether the opportunity is there and what it would take to capture it."
+      />
     </div>
   );
 }

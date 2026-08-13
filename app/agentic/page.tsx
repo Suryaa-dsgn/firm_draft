@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { Reveal } from "@/components/primitives/Reveal";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { agentSystems } from "@/content/agentic";
-import { NAV_CTA_LABEL } from "@/lib/config";
+import { CTASection } from "@/components/sections/CTASection";
 
 const VERTICALS = [
   {
@@ -33,6 +30,7 @@ export const metadata: Metadata = {
 
 export default function AgenticPage() {
   return (
+    <>
     <div className="bg-navy pt-16">
       {/* Page header */}
       <section className="border-b border-navy-2 py-24 md:py-32">
@@ -104,26 +102,10 @@ export default function AgenticPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 md:py-32">
-        <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
-          <Reveal>
-            <h2 className="max-w-2xl text-display-m font-semibold text-on-navy text-balance">
-              Ready to see the two or three agents with the fastest path to impact for your portfolio?
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="mt-10">
-              <Link
-                href="/contact"
-                className={cn(buttonVariants({ size: "lg" }), "no-underline")}
-              >
-                {NAV_CTA_LABEL}
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
     </div>
+    <CTASection
+      heading="Ready to see the two or three agents with the fastest path to impact for your portfolio?"
+    />
+    </>
   );
 }

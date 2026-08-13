@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { Reveal } from "@/components/primitives/Reveal";
 import { PageHeader } from "@/components/primitives/PageHeader";
-import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { processSteps } from "@/content/approach";
-import { NAV_CTA_LABEL } from "@/lib/config";
+import { CTASection } from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
   title: "Approach",
@@ -106,33 +104,10 @@ export default function ApproachPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-navy py-24 md:py-32">
-        <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
-          <Reveal>
-            <h2 className="max-w-xl text-display-m font-semibold text-on-navy text-balance">
-              Let&apos;s find the agents that move your portfolio.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-6 max-w-md text-body-lg text-on-navy-muted">
-              We start with a focused review of one portfolio company&apos;s operating
-              workflows and identify the two or three agents with the fastest path
-              to measurable impact.
-            </p>
-          </Reveal>
-          <Reveal delay={0.18}>
-            <div className="mt-10">
-              <Link
-                href="/contact"
-                className={cn(buttonVariants({ size: "lg" }), "no-underline")}
-              >
-                {NAV_CTA_LABEL}
-              </Link>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+      <CTASection
+        heading="Let's find the agents that move your portfolio."
+        description="We start with a focused review of one portfolio company's operating workflows and identify the two or three agents with the fastest path to measurable impact."
+      />
     </div>
   );
 }
