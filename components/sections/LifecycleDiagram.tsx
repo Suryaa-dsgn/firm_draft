@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { spring } from "@/lib/motion";
 import { MonoLabel } from "@/components/primitives/MonoLabel";
@@ -58,13 +58,35 @@ const STAGES = [
   },
 ] as const;
 
+function isElementInView(el: HTMLElement) {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight * 0.9 && rect.bottom > window.innerHeight * 0.1;
+}
+
 export function LifecycleDiagram() {
   const [activeStage, setActiveStage] = useState(0);
   const [mobileOpen, setMobileOpen] = useState<number | null>(null);
+  const [isInView, setIsInView] = useState(false);
   const reduced = useReducedMotion();
+
+  useEffect(() => {
+    function check() {
+      const el = document.getElementById("lifecycle");
+      if (el) setIsInView(isElementInView(el));
+    }
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    return () => window.removeEventListener("scroll", check);
+  }, []);
 
   const active = STAGES[activeStage] ?? STAGES[0];
   const transition = reduced ? { duration: 0 } : spring.snappy;
+
+  useEffect(() => {
+    if (!isInView || reduced || activeStage >= STAGES.length - 1) return;
+    const timer = setTimeout(() => setActiveStage((s) => s + 1), 2500);
+    return () => clearTimeout(timer);
+  }, [activeStage, isInView, reduced]);
 
   return (
     <SectionShell id="lifecycle" className="border-t border-hairline">
