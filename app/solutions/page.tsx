@@ -87,6 +87,7 @@ export default function SolutionsPage() {
       <CTASection
         heading="Not sure which capability fits? Start with a conversation."
         description="Most engagements begin with a single question. We will tell you honestly whether we are the right fit."
+        wide
       />
     </div>
   );

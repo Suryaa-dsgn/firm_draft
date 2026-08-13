@@ -16,6 +16,8 @@ interface CTASectionProps {
   description?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  /** Widens the inner content container for pages where the heading is longer than the homepage split-heading. */
+  wide?: boolean;
 }
 
 function AnimatedPhrase({ phrases }: { phrases: string[] }) {
@@ -54,6 +56,7 @@ export function CTASection({
   description,
   ctaLabel = NAV_CTA_LABEL,
   ctaHref = "/contact",
+  wide = false,
 }: CTASectionProps) {
   return (
     <section
@@ -78,7 +81,7 @@ export function CTASection({
           <span className="pointer-events-none absolute bottom-0 right-0 size-3 bg-[#0E0E0F]" />
 
           {/* Content */}
-          <div className="mx-auto max-w-2xl text-center">
+          <div className={cn("mx-auto text-center", wide ? "max-w-3xl" : "max-w-2xl")}>
             <h2 className="text-display-l font-semibold">
               {animatedPhrases ? (
                 <>
@@ -92,7 +95,7 @@ export function CTASection({
 
             {description && (
               <Reveal delay={0.16}>
-                <p className="mx-auto mt-6 max-w-md text-body-lg text-ink-muted">
+                <p className={cn("mx-auto mt-6 text-body-lg text-ink-muted", wide ? "max-w-lg" : "max-w-md")}>
                   {description}
                 </p>
               </Reveal>

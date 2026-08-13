@@ -105,6 +105,7 @@ export default function AgenticPage() {
     </div>
     <CTASection
       heading="Ready to see the two or three agents with the fastest path to impact for your portfolio?"
+      wide
     />
     </>
   );

@@ -161,6 +161,7 @@ export default function IndustriesPage() {
       <CTASection
         heading="Not sure if your portfolio fits? Start with a conversation."
         description="We will tell you honestly whether the opportunity is there and what it would take to capture it."
+        wide
       />
     </div>
   );

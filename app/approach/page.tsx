@@ -107,6 +107,7 @@ export default function ApproachPage() {
       <CTASection
         heading="Let's find the agents that move your portfolio."
         description="We start with a focused review of one portfolio company's operating workflows and identify the two or three agents with the fastest path to measurable impact."
+        wide
       />
     </div>
   );
