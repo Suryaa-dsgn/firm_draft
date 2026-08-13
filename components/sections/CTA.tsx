@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { SectionShell } from "@/components/primitives/SectionShell";
 import { Reveal } from "@/components/primitives/Reveal";
 import { ScrambleText } from "@/components/primitives/ScrambleText";
@@ -11,29 +10,20 @@ export function CTA() {
   return (
     <SectionShell id="cta" variant="navy">
       <div className="grid grid-cols-12 gap-6">
-        <div className="col-span-12">
-          <Reveal>
-            <MonoLabel variant="index" className="text-on-navy-muted">
-              [ N.07 / 07 ]
-            </MonoLabel>
-          </Reveal>
-        </div>
-
         <div className="col-span-12 lg:col-span-7">
           <h2 className="text-display-l font-semibold text-balance">
             <ScrambleText className="text-on-navy" delay={0.08} duration={780}>
-              {"Find the technology opportunities "}
+              {"Let’s Find the Agents That "}
             </ScrambleText>
             <ScrambleText className="text-accent" delay={0.42} duration={640}>
-              {"inside your portfolio."}
+              {"Move Your Portfolio."}
             </ScrambleText>
           </h2>
 
           <Reveal delay={0.16}>
             <p className="mt-6 max-w-md text-body-lg text-on-navy-muted">
-              Start with one portfolio company. We assess the landscape, surface
-              the highest-value opportunities, and define a practical path to
-              execution.
+              We start with a focused review of one portfolio company&apos;s operating workflows
+              and identify the two or three agents with the fastest path to measurable impact.
             </p>
           </Reveal>
 

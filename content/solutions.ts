@@ -12,70 +12,70 @@ export interface SolutionPillar {
 export const solutions: SolutionPillar[] = [
   {
     id: "001",
-    title: "CIO Advisory & Fractional Leadership",
+    title: "Technology Due Diligence",
     description:
-      "Operator-aligned technology leadership without the full-time overhead.",
+      "Pre-close IT stack assessment: architecture, licensing, and integration risk flagged before the deal closes.",
     detail:
-      "We step into the CIO function when portfolio companies need direction, not just advice. That means setting the technology agenda, managing vendor relationships, and building an internal capability that compounds over the hold period.",
+      "We conduct technical assessments that go beyond surface-level architecture reviews. Our diligence identifies true technical debt, licensing exposure, integration risk, and the cost to modernize, with specific numbers rather than directional summaries.",
+    iconKey: "search",
+    href: "/solutions#tech-diligence",
+    agenticNote:
+      "Diligence agents ingest data-room documents and produce first-pass financial, contract, and compliance red-flag summaries, cutting the manual review cycle.",
+    outcomes: [
+      "Architecture, licensing, and integration risk flagged before close",
+      "100-day technology plan ready at signing",
+      "Risk-adjusted technology valuation inputs",
+    ],
+  },
+  {
+    id: "002",
+    title: "Fractional / Interim CIO",
+    description:
+      "Bridge technology leadership during a transition, carve-out, or search. Accountable for the roadmap, not just advisory hours.",
+    detail:
+      "We step into the CIO function when portfolio companies need direction, not just advice. That means setting the technology agenda, managing vendor relationships, and building internal capability that compounds over the hold period.",
     iconKey: "layout-dashboard",
     href: "/solutions#cio-advisory",
     agenticNote:
       "Governance agents monitor technology spend and vendor SLAs continuously, surfacing issues before they become board items.",
     outcomes: [
-      "Technology roadmap aligned to value creation thesis",
-      "Vendor consolidation and contract leverage",
+      "Technology roadmap aligned to the value creation thesis",
+      "Accountable leadership during transition or carve-out",
       "Internal capability built before exit",
     ],
   },
   {
-    id: "002",
-    title: "Technology Due Diligence",
-    description:
-      "A clear-eyed read on what you are actually acquiring.",
-    detail:
-      "We conduct technical assessments that go beyond surface-level architecture reviews. Our diligence identifies true technical debt, integration risk, and the cost to modernize. Specific numbers, not directional summaries.",
-    iconKey: "search",
-    href: "/solutions#tech-diligence",
-    agenticNote:
-      "Post-acquisition, deployment analysis agents track integration progress and flag divergence from the integration plan.",
-    outcomes: [
-      "Risk-adjusted technology valuation inputs",
-      "Identified integration dependencies before close",
-      "100-day technology plan ready at signing",
-    ],
-  },
-  {
     id: "003",
-    title: "Portfolio Technology Governance",
+    title: "IT Carve-Out, Integration & ERP Rationalization",
     description:
-      "Visibility across the portfolio, not just inside individual companies.",
+      "Separating or merging systems, data, and vendor contracts for divestitures, add-ons, and platform consolidations.",
     detail:
-      "We build the governance layer that lets you manage technology risk at the fund level: shared standards, consolidated reporting, and early warning when something is off track.",
-    iconKey: "shield-check",
-    href: "/solutions#governance",
+      "We manage the full separation or integration of systems, data, and vendor contracts, including a post-acquisition roadmap to consolidate overlapping ERP, PM, and finance systems inherited across add-ons. No rip-and-replace required.",
+    iconKey: "trending-up",
+    href: "/solutions#carve-out",
     agenticNote:
-      "Portfolio intelligence agents aggregate technology health metrics across companies, delivering a weekly governance digest without manual data collection.",
+      "Deployment analysis agents track integration progress and flag divergence from the integration plan in real time.",
     outcomes: [
-      "Single technology risk view across all holdings",
-      "Standardized KPIs that boards can read",
-      "Faster problem identification at the portfolio level",
+      "Systems separated or merged per acquisition plan",
+      "ERP and finance system rationalization roadmap",
+      "Vendor contract consolidation across add-ons",
     ],
   },
   {
     id: "004",
-    title: "Value Creation & Capital ROI",
+    title: "Cybersecurity, Compliance & the 100-Day Plan",
     description:
-      "Connecting technology investment to the returns that matter.",
+      "Risk assessment and remediation roadmap: SOC 2 and data-privacy readiness, sized to portfolio-company scale.",
     detail:
-      "We build the measurement layer between technology spending and financial outcomes. That means defining the right KPIs, tracking them, and attributing ROI so that technology spend can be defended, or cut, with data.",
-    iconKey: "trending-up",
-    href: "/solutions#value-creation",
+      "We deliver a technology roadmap aligned to the deal thesis, handed to the board with clear milestones and owners. Cybersecurity posture, compliance readiness, and the 100-day execution plan are integrated, not separate workstreams.",
+    iconKey: "shield-check",
+    href: "/solutions#compliance",
     agenticNote:
-      "ROI attribution agents map technology investment to operational outcomes in near real time, replacing quarterly manual reports.",
+      "License and compliance monitoring agents track professional licenses, certifications, and renewal deadlines continuously across the workforce.",
     outcomes: [
-      "Technology investment tied to EBITDA impact",
-      "Defensible ROI attribution at portfolio review",
-      "Spend optimized to the initiatives that actually move the needle",
+      "SOC 2 and data-privacy readiness assessment",
+      "Risk remediation roadmap sized to portfolio-company scale",
+      "Technology roadmap handed to board with milestones and owners",
     ],
   },
 ];

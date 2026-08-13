@@ -15,32 +15,33 @@ const PortfolioMonitor = dynamic(
 
 export function Hero() {
   return (
-    <section className="relative pt-32 pb-24 md:pt-40 md:pb-32">
+    <section className="relative pt-24 pb-24 md:pt-32 md:pb-32">
       <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 lg:col-span-6">
             {/* Eyebrow */}
             <Reveal>
-              <MonoLabel variant="tag" className="text-ink-faint">
-                CIO ADVISORY &amp; AGENTIC SYSTEMS
+              <MonoLabel variant="tag" className="text-ink-faint text-[10px] tracking-[0.06em]">
+                AGENTIC AI &amp; ENGINEERING SERVICES FOR PRIVATE EQUITY
               </MonoLabel>
             </Reveal>
 
             {/* Headline */}
             <h1 className="mt-6 text-display-xl font-semibold text-balance">
               <ScrambleText className="text-ink" delay={0.1} duration={820}>
-                {"Capital compounds when "}
+                {"Turning portfolio operations into "}
               </ScrambleText>
               <ScrambleText className="text-accent" delay={0.48} duration={740}>
-                {"technology governs itself."}
+                {"a competitive advantage."}
               </ScrambleText>
             </h1>
 
             {/* Lede */}
             <Reveal delay={0.18}>
               <p className="mt-4 max-w-xl text-body-lg text-ink-muted">
-                We turn technology from an unmanaged cost into a measurable value-creation lever,
-                from pre-close diligence through the hold period to exit.
+                Reusable AI agents that cut cost, accelerate diligence, and standardize
+                execution across the platform, deployed inside the operating partner&apos;s
+                own workflow and inside individual portfolio companies.
               </p>
             </Reveal>
 
@@ -60,7 +61,7 @@ export function Hero() {
                     "no-underline"
                   )}
                 >
-                  <ScrambleText trigger="hover" duration={360}>{"See the approach"}</ScrambleText>
+                  <ScrambleText trigger="hover" duration={360}>{"See how we engage"}</ScrambleText>
                 </Link>
               </div>
             </Reveal>
@@ -69,7 +70,7 @@ export function Hero() {
           {/* Portfolio Monitor widget */}
           <Reveal
             delay={0.1}
-            className="col-span-12 lg:col-span-6 lg:col-start-7 flex items-start"
+            className="col-span-12 lg:col-span-6 lg:col-start-7 flex items-center"
           >
             <div className="w-full max-w-sm lg:max-w-none">
               <PortfolioMonitor />
@@ -77,19 +78,7 @@ export function Hero() {
           </Reveal>
         </div>
 
-        {/* Trust logo row */}
-        <Reveal delay={0.36}>
-          <div className="mt-16 border-t border-hairline pt-10">
-            <MonoLabel className="mb-6 text-ink-faint">
-              TRUSTED BY TEAMS AT
-            </MonoLabel>
-            <div className="flex flex-wrap items-center gap-8">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <LogoSlot key={i} label={`Partner organisation ${i + 1}`} />
-              ))}
-            </div>
-          </div>
-        </Reveal>
+        {/* Trust logo row — hidden until client logos are ready */}
       </div>
     </section>
   );

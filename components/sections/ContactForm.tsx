@@ -13,7 +13,8 @@ import { CONTACT_EMAIL } from "@/lib/config";
 
 const schema = z.object({
   name: z.string().min(2, "Please enter your name"),
-  organisation: z.string().min(1, "Please enter your organisation"),
+  email: z.string().email("Please enter a valid email"),
+  company: z.string().min(1, "Please enter your company"),
   problem: z
     .string()
     .min(20, "Please share a bit more about what you are trying to solve"),
@@ -89,18 +90,35 @@ export function ContactForm() {
         )}
       </div>
 
-      {/* Organisation */}
+      {/* Email */}
       <div className="space-y-2">
-        <Label htmlFor="organisation">Organisation</Label>
+        <Label htmlFor="email">Email</Label>
         <Input
-          id="organisation"
-          placeholder="Fund or firm name"
-          aria-invalid={!!errors.organisation}
-          {...register("organisation")}
+          id="email"
+          type="email"
+          placeholder="you@fund.com"
+          aria-invalid={!!errors.email}
+          {...register("email")}
         />
-        {errors.organisation && (
+        {errors.email && (
           <p className="font-mono text-mono-label text-red-500">
-            {errors.organisation.message}
+            {errors.email.message}
+          </p>
+        )}
+      </div>
+
+      {/* Company */}
+      <div className="space-y-2">
+        <Label htmlFor="company">Company</Label>
+        <Input
+          id="company"
+          placeholder="Fund or firm name"
+          aria-invalid={!!errors.company}
+          {...register("company")}
+        />
+        {errors.company && (
+          <p className="font-mono text-mono-label text-red-500">
+            {errors.company.message}
           </p>
         )}
       </div>

@@ -19,34 +19,28 @@ export function Approach() {
     <SectionShell id="approach" className="bg-surface-sunk border-t border-hairline">
       {/* Header */}
       <div className="mb-16 grid grid-cols-12 gap-6">
-        <div className="col-span-12">
-          <Reveal>
-            <MonoLabel variant="index">[ N.05 / 07 ]</MonoLabel>
-          </Reveal>
-        </div>
         <div className="col-span-12 lg:col-span-5">
           <Reveal delay={0.06}>
             <h2 className="text-display-m font-semibold text-ink">
-              <ScrambleText duration={700}>{"Four phases. One operating model."}</ScrambleText>
+              <ScrambleText duration={700}>{"An engagement model built for portfolio speed."}</ScrambleText>
             </h2>
           </Reveal>
         </div>
         <div className="col-span-12 lg:col-span-4 lg:col-start-7 lg:pt-2">
           <Reveal delay={0.12}>
             <p className="text-body text-ink-muted">
-              A structured engagement that moves from diagnosis to ongoing measurement
-              without losing momentum.
+              No lengthy IT integration project. Pricing that scales with usage
+              instead of headcount.
             </p>
           </Reveal>
         </div>
       </div>
 
-      {/* Desktop: animated timeline + phase columns */}
+      {/* Desktop: animated timeline + step columns */}
       <div ref={ref} className="hidden lg:block">
 
         {/* Row 1: timeline bar with dot markers */}
         <div className="relative mb-12 h-[14px]">
-          {/* Bar animates scaleX 0→1 from left edge */}
           <motion.div
             className="absolute inset-x-0 h-px bg-hairline-strong"
             style={{ top: "7px", originX: 0 }}
@@ -54,7 +48,6 @@ export function Approach() {
             animate={{ scaleX: active ? 1 : 0 }}
             transition={reduced ? { duration: 0 } : { ...spring.default, duration: 1 }}
           />
-          {/* Accent dots + numeric labels sit on the bar */}
           <div className="grid grid-cols-4 gap-8 lg:gap-16">
             {processSteps.map((step, i) => (
               <motion.div
@@ -73,7 +66,7 @@ export function Approach() {
           </div>
         </div>
 
-        {/* Row 2: phase content with watermark numbers */}
+        {/* Row 2: step content */}
         <div className="grid grid-cols-4 gap-8 lg:gap-16">
           {processSteps.map((step, i) => (
             <motion.div
@@ -83,7 +76,7 @@ export function Approach() {
               animate={{ opacity: active ? 1 : 0, y: active ? 0 : 12 }}
               transition={reduced ? { duration: 0 } : { ...spring.default, delay: 0.7 + i * 0.08 }}
             >
-              {/* Faint background number — texture, not information */}
+              {/* Faint background number */}
               <div
                 className="pointer-events-none select-none absolute -top-2 right-0 font-semibold leading-none tracking-tight text-hairline -z-10"
                 style={{ fontSize: "clamp(4.5rem, 7vw, 7rem)" }}
@@ -92,18 +85,11 @@ export function Approach() {
                 {String(step.index).padStart(2, "0")}
               </div>
 
-              {/* Phase name */}
               <h3 className="relative text-display-m font-semibold text-ink">
-                <ScrambleText duration={480}>{step.phase}</ScrambleText>
+                <ScrambleText duration={480}>{step.title}</ScrambleText>
               </h3>
 
-              {/* Duration in accent */}
-              <div className="mt-2">
-                <MonoLabel className="text-accent">{step.duration.toUpperCase()}</MonoLabel>
-              </div>
-
-              {/* Description only — activity detail lives on /approach */}
-              <p className="mt-4 text-small text-ink-muted">{step.description}</p>
+              <p className="mt-4 text-small text-ink-muted">{step.body}</p>
             </motion.div>
           ))}
         </div>
@@ -124,15 +110,10 @@ export function Approach() {
                   </span>
                 </div>
                 <div className="pb-8">
-                  <div className="mb-1 flex items-baseline gap-3">
-                    <h3 className="text-title font-semibold text-ink">
-                      <ScrambleText duration={480}>{step.phase}</ScrambleText>
-                    </h3>
-                    <MonoLabel className="text-ink-faint">
-                      {step.duration.toUpperCase()}
-                    </MonoLabel>
-                  </div>
-                  <p className="text-small text-ink-muted">{step.description}</p>
+                  <h3 className="text-title font-semibold text-ink">
+                    <ScrambleText duration={480}>{step.title}</ScrambleText>
+                  </h3>
+                  <p className="mt-1.5 text-small text-ink-muted">{step.body}</p>
                 </div>
               </div>
             </div>

@@ -1,18 +1,18 @@
 import Link from "next/link";
 import { MonoLabel } from "@/components/primitives/MonoLabel";
-import { FIRM, CONTACT_EMAIL, NAV_LINKS } from "@/lib/config";
+import { FIRM, FIRM_TAGLINE, CONTACT_EMAIL, NAV_LINKS } from "@/lib/config";
 
 const LEGAL_YEAR = new Date().getFullYear();
 
 const TICKER_ITEMS = [
-  "[#AGENTIC GOVERNANCE]",
+  "[#AGENTIC AI]",
+  "[#PRIVATE EQUITY]",
   "[#CIO ADVISORY]",
-  "[#PORTFOLIO INTELLIGENCE]",
-  "[#TECHNOLOGY ROI]",
-  "[#PE OPERATIONS]",
-  "[#AGENTIC SYSTEMS]",
+  "[#PORTFOLIO OPERATIONS]",
   "[#VALUE CREATION]",
-  "[#EXIT READINESS]",
+  "[#DILIGENCE ACCELERATION]",
+  "[#100-DAY PLAN]",
+  "[#PROJECT CONTROLS]",
 ];
 
 const SECONDARY_LINKS = [
@@ -160,8 +160,8 @@ export function Footer() {
                     {CONTACT_EMAIL}
                   </a>
                 </li>
-                <li className="text-small text-ink-muted">(+1) 212 000 0000</li>
-                <li className="text-small text-ink-muted">New York, NY</li>
+                <li className="text-small text-ink-muted">[phone — insert]</li>
+                <li className="text-small text-ink-muted">Suwanee, Georgia</li>
               </ul>
             </div>
           </div>
@@ -204,7 +204,7 @@ export function Footer() {
       <div className="border-t border-hairline">
         <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)] py-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-mono-label text-ink-faint">
-            {FIRM} &copy; {LEGAL_YEAR} · CIO Advisory & Agentic Transformation
+            {FIRM} &copy; {LEGAL_YEAR} · {FIRM_TAGLINE}
           </p>
           <div className="flex items-center gap-5">
             {SECONDARY_LINKS.map(({ label, href }, i) => (

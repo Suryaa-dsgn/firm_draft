@@ -7,14 +7,14 @@ import { CONTACT_EMAIL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Tell us what you are dealing with. We will tell you honestly whether we are the right fit.",
+  description: "Start with a focused review of one portfolio company's operating workflows and find the agents with the fastest path to measurable impact.",
 };
 
 const WHAT_TO_EXPECT = [
   {
     step: "01",
     title: "No pitch",
-    body: "The first call is a direct conversation about the problem you are trying to solve. No deck, no slides.",
+    body: "We start with a focused review of one portfolio company's operating workflows and identify the two or three agents with the fastest path to measurable impact.",
   },
   {
     step: "02",
@@ -24,7 +24,7 @@ const WHAT_TO_EXPECT = [
   {
     step: "03",
     title: "A clear next step",
-    body: "Every first call ends with a specific recommendation: which service, which phase, and what the first 30 days would look like.",
+    body: "Every first call ends with a specific recommendation: which agent, which portfolio company, and what the first 30 days would look like.",
   },
 ];
 
@@ -33,8 +33,8 @@ export default function ContactPage() {
     <div className="pt-16">
       <PageHeader
         tag="CONTACT"
-        title="Tell us what you are dealing with."
-        subtext="We will tell you honestly whether we are the right fit."
+        title="Let's Find the Agents That Move Your Portfolio"
+        subtext="We start with a focused review of one portfolio company's operating workflows and identify the two or three agents with the fastest path to measurable impact."
         titleMaxWidth="max-w-2xl"
       />
 
@@ -70,16 +70,25 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Direct email fallback */}
+              {/* Contact details */}
               <Reveal delay={0.32}>
                 <div className="mt-12 border-t border-hairline pt-8">
-                  <MonoLabel className="text-ink-faint">PREFER EMAIL</MonoLabel>
-                  <a
-                    href={`mailto:${CONTACT_EMAIL}`}
-                    className="mt-2 block text-body text-accent underline underline-offset-4 hover:text-accent-hover"
-                  >
-                    {CONTACT_EMAIL}
-                  </a>
+                  <MonoLabel className="text-ink-faint">CONTACT DETAILS</MonoLabel>
+                  <div className="mt-4 space-y-3 text-small text-ink-muted">
+                    <p className="font-medium text-ink">Shudhanshu</p>
+                    <p>Founder &amp; Managing Principal</p>
+                    <p>Quickflows.AI LLC · Suwanee, Georgia</p>
+                    <p className="text-ink-faint">
+                      Agentic AI for portfolio operations, diligence, and value creation
+                    </p>
+                    <a
+                      href={`mailto:${CONTACT_EMAIL}`}
+                      className="block text-accent hover:text-accent-hover underline underline-offset-4 transition-colors"
+                    >
+                      {CONTACT_EMAIL}
+                    </a>
+                    <p>[phone — insert]</p>
+                  </div>
                 </div>
               </Reveal>
             </div>

@@ -7,24 +7,24 @@ import { ScrambleText } from "@/components/primitives/ScrambleText";
 const OFFERINGS = [
   {
     tag: "001",
-    title: "CIO Advisory",
-    description: "Technology leadership when the portfolio needs it.",
-    detail: "Operator-aligned CIO function, from strategy to execution, without the full-time overhead.",
-    href: "/solutions#cio-advisory",
+    title: "Agentic Firm Operations",
+    description: "What we deliver to the PE firm's operating team.",
+    detail: "Deal screening and thesis-matching agents; diligence acceleration with data-room triage and red-flag summaries; multi-entity portfolio monitoring and KPI rollups; LP reporting, capital calls, and waterfall support.",
+    href: "/agentic",
   },
   {
     tag: "002",
-    title: "Technology Due Diligence",
-    description: "Know what you are acquiring, and what it takes to create value.",
-    detail: "Clear-eyed assessments that surface real risk, real cost, and a 100-day plan before close.",
-    href: "/solutions#tech-diligence",
+    title: "Portfolio Company Transformation",
+    description: "What we deploy inside individual portfolio companies.",
+    detail: "Project controls automation covering schedule and cost variance; AP/AR and back-office automation across ERPs; bid and proposal drafting with win-rate analysis; license and compliance monitoring for licensed trades.",
+    href: "/agentic",
   },
   {
     tag: "003",
-    title: "Agentic Systems",
-    description: "Intelligent systems that execute the work, not just analyze it.",
-    detail: "Reusable agents for governance, intelligence, deployment, and ROI attribution across the portfolio.",
-    href: "/agentic",
+    title: "CIO Advisory",
+    description: "Technology leadership from pre-close through the first 100 days.",
+    detail: "We sit in the CIO/technology-leadership seat where a portfolio company needs one, from pre-close diligence through the first 100 days. Full detail on the Solutions page.",
+    href: "/solutions",
   },
 ] as const;
 
@@ -32,22 +32,18 @@ export function ThreeOfferings() {
   return (
     <SectionShell id="offerings" className="border-t border-hairline bg-surface-sunk">
       <div className="mb-12 grid grid-cols-12 gap-6">
-        <div className="col-span-12">
-          <Reveal>
-            <MonoLabel variant="index">[ N.03 / 07 ]</MonoLabel>
-          </Reveal>
-        </div>
         <div className="col-span-12 lg:col-span-5">
           <Reveal delay={0.06}>
             <h2 className="text-display-m font-semibold text-ink">
-              <ScrambleText duration={620}>{"Three ways in."}</ScrambleText>
+              <ScrambleText duration={620}>{"Two ways we engage with a PE platform."}</ScrambleText>
             </h2>
           </Reveal>
         </div>
         <div className="col-span-12 lg:col-span-5 lg:col-start-7 lg:pt-2">
           <Reveal delay={0.12}>
             <p className="text-body text-ink-muted">
-              Each offering operates on its own or as part of a full engagement.
+              We work directly with the firm&apos;s operating team, and inside individual
+              portfolio companies, often both on the same platform.
             </p>
           </Reveal>
         </div>

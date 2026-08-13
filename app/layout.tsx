@@ -7,11 +7,11 @@ import { Footer } from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | [FIRM]",
-    default: "CIO Advisory & Agentic Systems | [FIRM]",
+    template: "%s | Quickflows.AI",
+    default: "Agentic AI & Engineering Services for Private Equity | Quickflows.AI",
   },
   description:
-    "Technology leadership and agentic systems that turn governance into operating leverage.",
+    "Reusable AI agents that cut cost, accelerate diligence, and standardize execution across PE portfolios.",
 };
 
 export default function RootLayout({

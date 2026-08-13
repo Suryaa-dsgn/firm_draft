@@ -11,49 +11,38 @@ import { NAV_CTA_LABEL } from "@/lib/config";
 export const metadata: Metadata = {
   title: "Approach",
   description:
-    "A four-phase engagement model: Diagnose, Govern, Deploy, Measure.",
+    "An engagement model built for portfolio speed: no lengthy IT integration, usage-based pricing, 100-day rollout.",
 };
 
-const NINETY_DAY_PHASES = [
+const WHY_QUICKFLOWS = [
   {
-    label: "Weeks 1-3",
-    phase: "Diagnose",
-    milestones: [
-      "Technology landscape mapped",
-      "Vendor and contract risk identified",
-      "Draft value creation roadmap",
-    ],
+    label: "Agents not headcount",
+    detail: "We scale without growing the team. AI handles the monitoring, compilation, and analysis your analysts currently do manually.",
   },
   {
-    label: "Weeks 4-6",
-    phase: "Govern",
-    milestones: [
-      "KPI framework live",
-      "Governance cadence running",
-      "Agentic monitoring configured",
-    ],
+    label: "Reusable across the platform",
+    detail: "Once an agent is proven for one portfolio company, the same component redeploys to the next one in days, not months.",
   },
   {
-    label: "Weeks 7-12",
-    phase: "Deploy",
-    milestones: [
-      "Priority initiatives executing",
-      "Vendor changes actioned",
-      "First ROI attribution data",
-    ],
+    label: "Operator-built not theory-built",
+    detail: "Our agents were shaped by real engagement patterns, from live commercial deployments, not academic research or vendor demos.",
   },
-];
+  {
+    label: "Aligned pricing",
+    detail: "PMPM and per-transaction pricing means our cost scales with usage. You don't pay for headcount between engagements.",
+  },
+] as const;
 
 export default function ApproachPage() {
   return (
     <div className="pt-16">
       <PageHeader
         tag="APPROACH"
-        title="Four phases. One operating model."
-        subtext="Every engagement follows the same structure: diagnose first, govern next, deploy with precision, then measure continuously. The sequence is not arbitrary. Each phase depends on the one before it."
+        title="An Engagement Model Built for Portfolio Speed"
+        subtext="No lengthy IT integration project, no disruption to systems already in place, and pricing that scales with usage instead of headcount."
       />
 
-      {/* Phase-stack wrapper — bg-surface-sunk tray that frames the card deck */}
+      {/* Stacking card deck */}
       <div className="bg-surface-sunk pt-6">
         {processSteps.map((step, i) => (
           <section
@@ -78,29 +67,13 @@ export default function ApproachPage() {
                   >
                     {String(step.index).padStart(2, "0")}
                   </div>
-                  <h2 className="mt-2 text-display-m font-semibold text-ink">{step.phase}</h2>
-                  <MonoLabel className="mt-3 text-ink-faint">{step.duration.toUpperCase()}</MonoLabel>
+                  <h2 className="mt-2 text-display-m font-semibold text-ink">{step.title}</h2>
                 </Reveal>
               </div>
               {/* Right col */}
               <div className="col-span-12 lg:col-span-7 lg:col-start-6 lg:pt-6">
                 <Reveal delay={0.1}>
-                  <p className="text-body-lg text-ink-muted">{step.description}</p>
-                </Reveal>
-                <Reveal delay={0.18}>
-                  <div className="mt-8">
-                    <MonoLabel className="mb-4 text-ink-faint">ACTIVITIES</MonoLabel>
-                    <ul className="space-y-3">
-                      {step.activities.map((activity, j) => (
-                        <li key={activity} className="flex items-start gap-4 text-body text-ink">
-                          <span className="mt-0.5 font-mono text-mono-label text-ink-faint shrink-0">
-                            {String(j + 1).padStart(2, "0")}
-                          </span>
-                          {activity}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <p className="text-body-lg text-ink-muted">{step.body}</p>
                 </Reveal>
               </div>
             </div>
@@ -108,98 +81,27 @@ export default function ApproachPage() {
         ))}
       </div>
 
-      {/* First 90 Days section */}
-      <section className="border-b border-hairline bg-surface-sunk py-24 md:py-32">
-        <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
-          <Reveal>
-            <MonoLabel variant="tag">FIRST 90 DAYS</MonoLabel>
-            <h2 className="mt-6 max-w-xl text-display-m font-semibold text-ink text-balance">
-              What the first engagement looks like in practice.
-            </h2>
-            <p className="mt-4 max-w-lg text-body text-ink-muted">
-              The first three phases typically complete within 90 days. By week 12
-              you have a running governance layer, active agentic monitoring, and
-              initial ROI attribution data.
-            </p>
-          </Reveal>
-
-          <div className="mt-16 grid gap-px bg-hairline rounded-card overflow-hidden sm:grid-cols-3">
-            {NINETY_DAY_PHASES.map(({ label, phase, milestones }, i) => (
-              <Reveal key={phase} delay={0.06 + i * 0.08} className="h-full">
-                <div className="h-full bg-surface p-8">
-                  <MonoLabel className="text-ink-faint">{label.toUpperCase()}</MonoLabel>
-                  <h3 className="mt-3 text-title font-semibold text-ink">{phase}</h3>
-                  <ul className="mt-6 space-y-3">
-                    {milestones.map((m) => (
-                      <li key={m} className="flex items-start gap-3 text-small text-ink-muted">
-                        <span className="mt-1.5 size-1 shrink-0 rounded-full bg-accent" />
-                        {m}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who you will work with */}
+      {/* Why Quickflows */}
       <section className="border-b border-hairline py-24 md:py-32">
         <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
           <Reveal>
-            <MonoLabel variant="tag">WHO YOU WILL WORK WITH</MonoLabel>
+            <MonoLabel variant="tag">WHY QUICKFLOWS</MonoLabel>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="mt-6 max-w-xl text-display-m font-semibold text-ink text-balance">
-              Senior from day one.
+              Built for the way private equity operates.
             </h2>
           </Reveal>
 
-          <div className="mt-14 grid grid-cols-12 gap-6 lg:gap-12">
-            {/* Photo slot */}
-            <div className="col-span-12 lg:col-span-4">
-              <Reveal delay={0.1}>
-                {/* Monogram placeholder — swap for a real photograph when available */}
-                <div
-                  className="flex size-28 items-center justify-center rounded-card border border-hairline bg-surface-sunk"
-                  data-placeholder="principal-photo"
-                  aria-label="Principal photo placeholder"
-                >
-                  <span className="font-mono text-[2rem] font-semibold leading-none text-ink-faint">
-                    [P]
-                  </span>
+          <div className="mt-14 grid gap-4 sm:grid-cols-2">
+            {WHY_QUICKFLOWS.map((item, i) => (
+              <Reveal key={item.label} delay={0.08 + i * 0.06}>
+                <div className="rounded-card border border-hairline bg-canvas px-5 py-4">
+                  <p className="text-small font-semibold text-ink">{item.label}</p>
+                  <p className="mt-1 text-small text-ink-faint">{item.detail}</p>
                 </div>
-                <h3 className="mt-6 text-title font-semibold text-ink">
-                  [PRINCIPAL NAME]
-                </h3>
-                <p className="mt-1 font-mono text-mono-label uppercase tracking-widest text-ink-faint">
-                  Founding Principal
-                </p>
-                <p className="font-mono text-mono-label uppercase tracking-widest text-ink-faint">
-                  CIO Advisory Practice
-                </p>
               </Reveal>
-            </div>
-
-            {/* Bio */}
-            <div className="col-span-12 lg:col-span-7 lg:col-start-6 lg:pt-1">
-              <Reveal delay={0.14}>
-                <p className="text-body text-ink-muted">
-                  Every engagement is led by a senior practitioner, not handed to a
-                  junior team after the kickoff call. The principal who scopes the
-                  work runs the work, stays accountable through exit, and gives you
-                  a direct line when something needs to move fast.
-                </p>
-                <p className="mt-4 text-body text-ink-muted">
-                  [Placeholder. A real bio and photograph replace this before the
-                  site goes live.]
-                </p>
-                <p className="mt-4 font-mono text-mono-label uppercase tracking-widest text-ink-faint">
-                  [PLACEHOLDER - REAL BIO PENDING]
-                </p>
-              </Reveal>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -209,13 +111,14 @@ export default function ApproachPage() {
         <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
           <Reveal>
             <h2 className="max-w-xl text-display-m font-semibold text-on-navy text-balance">
-              The first conversation takes 30 minutes.
+              Let&apos;s find the agents that move your portfolio.
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-6 max-w-md text-body-lg text-on-navy-muted">
-              We will tell you what phase would be most useful to start with and
-              why.
+              We start with a focused review of one portfolio company&apos;s operating
+              workflows and identify the two or three agents with the fastest path
+              to measurable impact.
             </p>
           </Reveal>
           <Reveal delay={0.18}>

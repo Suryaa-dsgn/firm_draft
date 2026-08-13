@@ -11,7 +11,7 @@ import { NAV_CTA_LABEL } from "@/lib/config";
 export const metadata: Metadata = {
   title: "Solutions",
   description:
-    "Four integrated capabilities: CIO Advisory, Technology Due Diligence, Portfolio Governance, and Value Creation.",
+    "CIO Advisory and agentic systems for PE portfolio companies: Technology Due Diligence, Fractional CIO, IT Carve-Out, and Cybersecurity.",
 };
 
 export default function SolutionsPage() {
@@ -19,8 +19,8 @@ export default function SolutionsPage() {
     <div className="pt-16">
       <PageHeader
         tag="SOLUTIONS"
-        title="Four capabilities. One integrated practice."
-        subtext="Each offering is designed to work on its own or as part of a full engagement. The pattern is always the same: install the right leadership, build the measurement layer, and connect technology to returns."
+        title="CIO Advisory for PE Portfolios"
+        subtext="Beyond agent deployment, we sit in the CIO/technology-leadership seat where a portfolio company needs one, from pre-close diligence through the first 100 days."
       />
 
       {/* Pillar sections */}
