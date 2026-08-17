@@ -20,8 +20,10 @@ interface ScrambleTextProps {
   delay?: number;
   /** Milliseconds for all characters to lock. Scales with length implicitly. */
   duration?: number;
-  /** "inView" fires once on scroll into view (default). "hover" fires on each mouse enter. */
-  trigger?: "inView" | "hover";
+  /** "inView" fires once on scroll into view (default). "hover" fires on each mouse enter. "none" disables auto-triggers — use externalTrigger instead. */
+  trigger?: "inView" | "hover" | "none";
+  /** Increment this number to fire the scramble programmatically (e.g. from a parent container's onMouseEnter). */
+  externalTrigger?: number;
 }
 
 export function ScrambleText({
@@ -30,6 +32,7 @@ export function ScrambleText({
   delay = 0,
   duration = 900,
   trigger = "inView",
+  externalTrigger,
 }: ScrambleTextProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.3 });
@@ -122,6 +125,13 @@ export function ScrambleText({
     startScramble();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inView]);
+
+  /* External trigger — fires whenever the parent increments this number */
+  useEffect(() => {
+    if (!externalTrigger) return;
+    startScramble();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [externalTrigger]);
 
   /* SSR / pre-mount / reduced-motion: plain text, no spans */
   if (glyphs === null || reduced) {
