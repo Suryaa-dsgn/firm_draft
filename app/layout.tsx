@@ -7,8 +7,8 @@ import { Footer } from "@/components/sections/Footer";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Quickflows.AI",
-    default: "Agentic AI & Engineering Services for Private Equity | Quickflows.AI",
+    template: "%s | Deltayfe LLC",
+    default: "Agentic AI & Engineering Services for Private Equity | Deltayfe LLC",
   },
   description:
     "Reusable AI agents that cut cost, accelerate diligence, and standardize execution across PE portfolios.",

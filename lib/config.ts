@@ -1,4 +1,4 @@
-export const FIRM = "Quickflows.AI";
+export const FIRM = "Deltayfe LLC";
 export const FIRM_TAGLINE =
   "Agentic AI & Engineering Services for Private Equity";
 export const NAV_CTA_LABEL = "Book a conversation";

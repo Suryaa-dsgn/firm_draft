@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { MonoLabel } from "@/components/primitives/MonoLabel";
 import { Reveal } from "@/components/primitives/Reveal";
 import { PageHeader } from "@/components/primitives/PageHeader";
 import { ContactForm } from "@/components/sections/ContactForm";
-import { CONTACT_EMAIL } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -70,27 +68,6 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              {/* Contact details */}
-              <Reveal delay={0.32}>
-                <div className="mt-12 border-t border-hairline pt-8">
-                  <MonoLabel className="text-ink-faint">CONTACT DETAILS</MonoLabel>
-                  <div className="mt-4 space-y-3 text-small text-ink-muted">
-                    <p className="font-medium text-ink">Shudhanshu</p>
-                    <p>Founder &amp; Managing Principal</p>
-                    <p>Quickflows.AI LLC · Suwanee, Georgia</p>
-                    <p className="text-ink-faint">
-                      Agentic AI for portfolio operations, diligence, and value creation
-                    </p>
-                    <a
-                      href={`mailto:${CONTACT_EMAIL}`}
-                      className="block text-accent hover:text-accent-hover underline underline-offset-4 transition-colors"
-                    >
-                      {CONTACT_EMAIL}
-                    </a>
-                    <p>[phone — insert]</p>
-                  </div>
-                </div>
-              </Reveal>
             </div>
 
             {/* Right — form */}
