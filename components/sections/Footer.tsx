@@ -75,7 +75,7 @@ export function Footer() {
 
       {/* Main content */}
       <div className="mx-auto max-w-content px-[clamp(20px,5vw,64px)]">
-        <div className="grid gap-10 py-12 lg:grid-cols-[1.8fr_2fr_1fr] lg:gap-20 lg:py-28">
+        <div className="grid gap-10 py-8 lg:grid-cols-[1.8fr_2fr_1fr] lg:gap-20 lg:py-16">
 
           {/* Col 1 — Newsletter + wordmark */}
           <div className="flex flex-col gap-10 lg:justify-between lg:gap-16">
@@ -161,7 +161,7 @@ export function Footer() {
                   </a>
                 </li>
                 <li className="text-small text-ink-muted">[phone — insert]</li>
-                <li className="text-small text-ink-muted">Suwanee, Georgia</li>
+                {/* <li className="text-small text-ink-muted">Suwanee, Georgia</li> */}
               </ul>
             </div>
           </div>
